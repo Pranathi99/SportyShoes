@@ -1,0 +1,28 @@
+use sportyShoesApp;
+
+create table Orders(
+id int AUTO_INCREMENT PRIMARY KEY,
+dateOfPurchase varchar(10)
+);
+
+create table Product(
+id int AUTO_INCREMENT PRIMARY KEY,
+name varchar(100),
+description varchar(200),
+quantity int,
+price double,
+category varchar(100),
+order_id int,
+FOREIGN KEY (order_id) REFERENCES orders(id)
+);
+
+create table User( 
+id int AUTO_INCREMENT PRIMARY KEY,
+fname varchar(100),
+lname varchar(100),
+mobileNo varchar(15),
+username varchar(100),
+password varchar(100),
+product_id int,
+FOREIGN KEY (product_id) REFERENCES product(id)
+);
