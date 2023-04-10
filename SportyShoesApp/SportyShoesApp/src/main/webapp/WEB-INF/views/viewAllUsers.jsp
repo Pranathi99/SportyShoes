@@ -10,6 +10,8 @@
 <title>Sporty Shoes</title>
 </head>
 <body>
+<h2>List of Users</h2>
+<br/>
 <form method="post">
   <input type="text" name="prefix" placeholder="Enter User Name"/>
   <button type="submit">Search</button>
@@ -54,5 +56,7 @@
 </c:forEach>
 </c:if>
 </table>
+<br/><br/>
+<a href="AdminHome">Home</a>
 </body>
 </html>

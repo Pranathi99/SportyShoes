@@ -9,6 +9,7 @@
 <title>Sporty Shoes</title>
 </head>
 <body>
+<h2>Manage Products</h2>
 	<table border="2">
 		<tr>
 			<th>Id</th>
@@ -30,6 +31,8 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/addProd">Add new Product</a>
+	<br/>
+	<a href="/addProd">Add new Product</a><br/><br/>
+	<a href="/AdminHome">Home</a>
 </body>
 </html>

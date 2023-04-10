@@ -8,6 +8,7 @@
 <title>Sporty Shoes</title>
 </head>
 <body>
+<h2>Change Password</h2>
 	<c:if test="${not empty msg}">
   <p class="success-message" style="color:green;font-size:1.5rem">${msg}</p>
 </c:if>

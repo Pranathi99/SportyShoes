@@ -8,6 +8,7 @@
 <title>Sporty Shoes</title>
 </head>
 <body>
+<h2>User Login</h2>
 <c:if test="${not empty errorMsg}">
   <p class="error-message" style="color:red;font-size:1.5rem">${errorMsg}</p>
 </c:if>
@@ -15,17 +16,18 @@
 		<table>
 			<tr>
 			<td>Username:</td>
-			<td><input type="text" name="Username"/></td>
+			<td><input type="text" name="Username" required="required"/></td>
 			</tr>
 			<tr>
 			<td>Password:</td>
-			<td><input type="password" name="Password"/></td>
+			<td><input type="password" name="Password" required="required"/></td>
 			</tr>
 			<tr>
 				<td><input type="submit" name="Register"/></td>
 			</tr>
 		</table>
 	</form>
-	<a href="userRegister">New User?Click here to Register</a>
+	<a href="userRegister">New User?Click here to Register</a><br/><br/>
+	<a href="index.html">Home</a>
 </body>
 </html>

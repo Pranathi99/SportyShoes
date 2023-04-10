@@ -32,6 +32,8 @@ public class Orders {
     private int quantity;
     
     private double price;
+    
+    private String date_time;
 
 	public int getId() {
 		return order_id;
@@ -89,6 +91,16 @@ public class Orders {
 		this.price = price;
 	}
 
+	
+
+	public String getDate_time() {
+		return date_time;
+	}
+
+	public void setDate_time(String date_time) {
+		this.date_time = date_time;
+	}
+
 	public Orders() {
 		super();
 	}
@@ -96,8 +108,9 @@ public class Orders {
 	@Override
 	public String toString() {
 		return "Orders [order_id=" + order_id + ", user=" + user + ", product=" + product + ", date_of_purchase="
-				+ date_of_purchase + ", quantity=" + quantity + ", price=" + price + "]";
+				+ date_of_purchase + ", quantity=" + quantity + ", price=" + price + ", date_time=" + date_time + "]";
 	}
-    
+
+	
     
 }

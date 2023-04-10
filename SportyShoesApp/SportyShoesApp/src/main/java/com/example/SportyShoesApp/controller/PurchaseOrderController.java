@@ -1,6 +1,9 @@
 package com.example.SportyShoesApp.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,10 +28,26 @@ public class PurchaseOrderController {
 	ProductRepository prodRepo;
 	
 	@RequestMapping("/viewPurchase")
-	public String getAllOrders(ModelMap model)
+	public String getAllOrders(ModelMap model) 
 	{
 		List<Orders>order_list=orderRepo.findAll();
-		model.addAttribute("order_list", order_list);
+		Map<String,List<Orders>>orders=new HashMap<String,List<Orders>>();
+		for(Orders order:order_list)
+		{
+			if(orders.get(order.getDate_time())==null)
+			{
+				List<Orders>list=new ArrayList<Orders>();
+				list.add(order);
+				orders.put(order.getDate_time(),list);
+			}
+			else
+			{
+				List<Orders>list=orders.get(order.getDate_time());
+				list.add(order);
+				orders.put(order.getDate_time(),list);
+			}
+		}
+		model.addAttribute("order_list", orders);
 		return  "viewPurchaseOrder";
 	}
 	

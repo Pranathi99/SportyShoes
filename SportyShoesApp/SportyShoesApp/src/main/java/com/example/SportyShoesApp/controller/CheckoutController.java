@@ -1,10 +1,18 @@
 package com.example.SportyShoesApp.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
@@ -29,23 +37,41 @@ public class CheckoutController {
 	UserRepository userRepo;
 	
 	@RequestMapping("/Checkout/payment")
-	public String payment(@RequestParam(name="id")int id,ModelMap model) {
-		model.addAttribute("id",id);
+	public String payment(@RequestParam("cart_len")int cart_len, ModelMap model) {
+		if(cart_len<=0)
+		{
+			model.addAttribute("errorMsg", "No items in cart!");
+			return "/userHome";
+		}
 		return "payment";
 	}
 	
 	@RequestMapping("/Checkout/receipt")
-	public String checkout(@RequestParam(name="id")String prod_id,@SessionAttribute(name="user_id")int user_id) {
-		Product prod=(Product) prodRepo.findById(Integer.parseInt(prod_id));
+	public String checkout(@SessionAttribute(name="cart")Map<Integer,Integer>cart,@SessionAttribute(name="user_id")int user_id,ModelMap model) {
+		
+		List<Orders>cart_items=new ArrayList<Orders>();
 		User user=userRepo.findById(user_id);
-		Orders order=new Orders();
-		LocalDate date=LocalDate.now();
-		order.setDate_of_purchase(date.toString());
-		order.setProduct(prod);
-		order.setUser(user);
-		order.setPrice(prod.getPrice());
-		order.setQuantity(1);
-		orderRepo.save(order);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+		LocalDateTime dateTime=LocalDateTime.now();
+		String formattedDateTime = dateTime.format(formatter);
+		String date=dateTime.toLocalDate().toString();
+		for (Entry<Integer, Integer> entry : cart.entrySet())
+		{
+			int prod_id=entry.getKey();
+			int quantity=entry.getValue();
+			Product prod=prodRepo.findById(prod_id);
+			Orders order=new Orders();
+			order.setDate_of_purchase(date);
+			order.setProduct(prod);
+			order.setUser(user);
+			order.setPrice(prod.getPrice());
+			order.setQuantity(quantity);
+			order.setDate_time(formattedDateTime);
+			orderRepo.save(order);
+			cart_items.add(order);
+		}
+		cart.clear();
+		model.addAttribute("cart_items", cart_items);
 		return "checkout";
 	}
 }

@@ -8,7 +8,7 @@
 <title>Sporty Shoes</title>
 </head>
 <body>
-	<form action="receipt?id=${id}" method="post">
+	<form action="receipt" method="post">
 		<h1>Enter Payment Details:</h1>
 		<table>
 			<tr>
@@ -34,6 +34,6 @@
 	    </table>
     </form>
     <br/>
-    <a href="userHome.html">Home</a>
+    <a href="/userHome">Home</a>
 </body>
 </html>

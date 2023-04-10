@@ -36,5 +36,7 @@
 				<td><input type="submit" value="Add"/></td>
 			</tr>
 		</table>
+		<br/><br/>
+		<a href="AdminHome">Home</a>
 </body>
 </html>

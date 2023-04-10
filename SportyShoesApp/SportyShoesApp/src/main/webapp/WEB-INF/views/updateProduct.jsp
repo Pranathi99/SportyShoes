@@ -36,5 +36,7 @@
 			</tr>
 		</table>
 	</form>
+	<br/><br/>
+	<a href="AdminHome">Home</a>
 </body>
 </html>

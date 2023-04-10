@@ -8,6 +8,7 @@
 <title>Sporty Shoes</title>
 </head>
 <body>
+<h2>User Registration</h2>
 <c:if test="${not empty errorMsg}">
   <p class="error-message" style="color:red;font-size:1.5rem">${errorMsg}</p>
 </c:if>
@@ -53,6 +54,7 @@
 			</tr>
 		</table>
 	</form>
-	<a href="userLogin">Already a User?Click here to Login</a>
+	<a href="userLogin">Already a User?Click here to Login</a><br/><br/>
+	<a href="index.html">Home</a>
 </body>
 </html>
