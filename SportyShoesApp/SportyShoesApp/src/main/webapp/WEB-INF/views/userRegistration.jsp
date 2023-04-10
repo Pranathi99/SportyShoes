@@ -23,7 +23,7 @@
 			</tr>
 			<tr>
 			<td>MobileNo:</td>
-			<td><input type="text" name="mobileNo" required="required"/></td>
+			<td><input type="text" name="mobile_no" required="required"/></td>
 			</tr>
 			<tr>
 			<td>Username:</td>

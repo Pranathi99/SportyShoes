@@ -1,5 +1,7 @@
 package com.example.SportyShoesApp.controller;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -37,7 +39,8 @@ public class CheckoutController {
 		Product prod=(Product) prodRepo.findById(Integer.parseInt(prod_id));
 		User user=userRepo.findById(user_id);
 		Orders order=new Orders();
-		order.setDate_of_purchase("2023-12-12");
+		LocalDate date=LocalDate.now();
+		order.setDate_of_purchase(date.toString());
 		order.setProduct(prod);
 		order.setUser(user);
 		order.setPrice(prod.getPrice());

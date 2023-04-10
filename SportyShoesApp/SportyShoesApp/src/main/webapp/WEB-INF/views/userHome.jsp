@@ -10,14 +10,14 @@
 </head>
 <body>
  <ul>
-        <li><a href="Category?category=sneakers">Sneakers</a></li>
-        <li><a href="Category?category=sports">Sports Shoes</a></li>
-        <li><a href="Category?category=heels">Heels</a></li>
-        <li><a href="Category?category=sandals">Sandals</a></li>
-        <li><a href="Category?category=slippers">Slippers</a></li>
-        <li><a href="Category?category=skates">Skating Shoes</a></li>
-        <li><a href="Category?category=boots">Rain Boots</a></li>
-        <li><a href="Category?category=office">Office Shoes</a></li>
+        <li><a href="Category?category=Sneakers">Sneakers</a></li>
+        <li><a href="Category?category=Sports">Sports Shoes</a></li>
+        <li><a href="Category?category=Heels">Heels</a></li>
+        <li><a href="Category?category=Sandals">Sandals</a></li>
+        <li><a href="Category?category=Slippers">Slippers</a></li>
+        <li><a href="Category?category=Skates">Skating Shoes</a></li>
+        <li><a href="Category?category=Boots">Rain Boots</a></li>
+        <li><a href="Category?category=Office">Office Shoes</a></li>
     </ul>
     <div>
         <c:if test="${fn:length(product_list)>0}">

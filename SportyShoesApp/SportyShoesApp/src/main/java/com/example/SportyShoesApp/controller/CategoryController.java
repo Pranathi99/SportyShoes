@@ -21,7 +21,6 @@ public class CategoryController {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String getProducts(@RequestParam(name="category")String category,ModelMap model) {
-		System.out.println("in hererreer");
 		List<Product>product_list=prodRepo.findByCategory(category);
 		model.addAttribute("product_list", product_list);
 		return "userHome";
