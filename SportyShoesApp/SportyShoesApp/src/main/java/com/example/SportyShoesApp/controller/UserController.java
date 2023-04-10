@@ -21,7 +21,7 @@ import com.example.SportyShoesApp.entity.Product;
 import com.example.SportyShoesApp.entity.User;
 
 @Controller
-@SessionAttributes({"user_id","cart"})
+@SessionAttributes({"user_id","cart","name"})
 public class UserController {
 	
 	@Autowired

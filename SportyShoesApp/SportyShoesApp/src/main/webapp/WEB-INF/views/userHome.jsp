@@ -17,7 +17,7 @@
 <table>
 <tr>
 	<td style="padding-right: 70rem"><h2>Welcome, ${name}!</h2></td>
-	<td><a href="index.html">Logout</a></td>	
+	<td><a href="/index.html">Logout</a></td>	
 </tr>
 </table>
 <h3>Available Categories</h3>
