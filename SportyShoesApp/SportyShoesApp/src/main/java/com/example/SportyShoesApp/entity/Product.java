@@ -28,10 +28,6 @@ public class Product {
 	private int quantity;
 	private double price;
 	private String category;
-//	
-//	@ManyToOne(fetch = FetchType.LAZY)
-//	@JoinColumn(name="order_id")
-//    private Orders order;
 
 	public int getId() {
 		return id;

@@ -97,9 +97,11 @@
 	</c:if>
 	<!-- ----------------------------------------------------------------------------------------------------------- -->
 	<c:if test="${not empty param.category}">
+	<c:set var="breakLoop" value="false"/>
 		<c:forEach items="${order_list.entrySet()}" var="order">
 			<c:forEach items="${order.value}" var="item" varStatus="index">
-				<c:if test="${item.product.category eq param.category}">
+				<c:if test="${item.product.category eq param.category and breakLoop==false}">
+					<c:set var="breakLoop" value="true"/>
 					<table border="2px" style="margin-bottom: 10px">
 						<tr>
 							<td>

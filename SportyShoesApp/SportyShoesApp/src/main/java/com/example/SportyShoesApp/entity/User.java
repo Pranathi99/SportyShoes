@@ -32,12 +32,6 @@ public class User {
 	@Embedded
 	private Address address;
 	
-//	@ManyToMany(mappedBy = "user",cascade = CascadeType.ALL)
-//	private List<Product>orders;
-	
-//	@OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    private List<Orders> orders = new ArrayList<>();
-	
 	public User() {
 		super();
 	}
